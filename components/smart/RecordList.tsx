@@ -29,16 +29,22 @@ export class RecordList extends React.Component<Props, State> {
             name: m.title,
             abstract: m.abstract,
             url: `${this.props.geonetworkApiUrl}catalog.search#/metadata/${m['geonet:info'].uuid}`,
+            thumbnailUrl:
+              typeof m.image === 'string' ? m.image.split('|')[1] : '',
           })),
         })
       );
   }
 
   render() {
-    return this.state.records.map((record) => (
-      <p>
-        <RecordSummary {...record} />
-      </p>
-    ));
+    return (
+      <div>
+        {this.state.records.map((record) => (
+          <div className="mb-1">
+            <RecordSummary {...record} />
+          </div>
+        ))}
+      </div>
+    );
   }
 }

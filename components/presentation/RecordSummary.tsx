@@ -1,20 +1,28 @@
 import * as React from 'react';
 import { RecordSimple } from '../model';
 
-const containerStyle = {
-  border: '1px solid gray',
-  borderRadius: 4,
-  padding: '0.5rem',
-};
-
 export const RecordSummary = (props: RecordSimple) => (
-  <div style={containerStyle}>
-    <strong>{props.name}</strong>
-    <p style={{ whiteSpace: 'pre-line' }}>{props.abstract}</p>
-    <p>
-      <a href={props.url} type="button">
-        Go to full page
-      </a>
-    </p>
+  <div className="card card-body container">
+    <div className="row">
+      <div
+        className="col-3"
+        style={{
+          background: `url(${props.thumbnailUrl})`,
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div className="col-9">
+        <strong>{props.name}</strong>
+        <p className="text-secondary" style={{ whiteSpace: 'pre-line' }}>
+          {props.abstract}
+        </p>
+
+        <div>
+          <a href={props.url} type="button" className="btn btn-sm btn-success">
+            Go to full page
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 );
