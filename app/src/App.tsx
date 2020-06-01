@@ -1,4 +1,12 @@
 import * as React from 'react';
-import { Hello } from '../../components/Hello';
+import { Hello } from '@geonetwork/components';
+import { RecordList } from '@geonetwork/components';
 
-export const App = () => <Hello appName={'geonetwork-ui'} />;
+export const App = () => (
+  <div>
+    <Hello appName={'geonetwork-ui'} />
+    <RecordList
+      geonetworkApiUrl={'https://www.geocat.ch/geonetwork/srv/fre/'}
+    />
+  </div>
+);
