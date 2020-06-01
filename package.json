@@ -3,8 +3,10 @@
   "version": "0.0.1",
   "description": "POC for GeoNetwork UI components based on React",
   "scripts": {
-    "dev": "webpack-dev-server --config app/webpack.config.js --mode development",
-    "build": "webpack -p --config app/webpack.config.js",
+    "dev:app": "webpack-dev-server --config app/webpack.config.js --mode development",
+    "build:app": "webpack -p --config app/webpack.config.js",
+    "dev:elements": "webpack-dev-server --config elements/webpack.config.js --mode development",
+    "build:elements": "webpack -p --config elements/webpack.config.js",
     "format": "prettier \"**/*.{tsx,html}\" --write"
   },
   "dependencies": {
@@ -21,6 +23,7 @@
     "prettier": "^2.0.5",
     "source-map-loader": "^1.0.0",
     "style-loader": "^1.2.1",
+    "to-string-loader": "^1.1.6",
     "ts-loader": "^7.0.5",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typescript": "^3.9.3",
